@@ -19,7 +19,7 @@ function App() {
   const [error, setError] = useState(false)
 
   const { ciudad, pais } = busqueda;
-
+//eslint-disable-next-line
   useEffect( async()=>{
     if(consulta){
       let res = await fetchAPI(ciudad, pais, key);
@@ -31,9 +31,9 @@ function App() {
       console.log("Realizando petición",res);
       setWeather(res)
     }
-
+    
   },[consulta])
-  
+  //eslint-disable-next-line
   const fetchAPI = async(ciudad, pais,key)=>{
 
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${key}`;
@@ -63,7 +63,7 @@ function App() {
                 <div className="col m6 s12">
                   {
                     error
-                    ? <Error mensaje="No hay resultados" />
+                    ? <Error message="No hay resultados" />
                     : <Clima weather={weather} />
                   }
                 </div>

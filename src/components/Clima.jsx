@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Clima = ({weather}) => {
 
     const {name, main} = weather;
@@ -24,6 +26,10 @@ const Clima = ({weather}) => {
             </div>
         </div>
     );
+}
+
+Clima.propTypes={
+    weather: PropTypes.object.isRequired
 }
  
 export default Clima;
